@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class bossthrow : MonoBehaviour
@@ -14,6 +15,7 @@ public class bossthrow : MonoBehaviour
     public Transform player; // 플레이어의 Transform
     public Transform throwPoint; // 총알 발사 위치
     public float hp = 100f;
+    public surutan surutan;
 
     private Vector2 targetPosition;
     private float timer;
@@ -30,6 +32,11 @@ public class bossthrow : MonoBehaviour
 
     private void Update()
     {
+        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         if (player == null)
         {
             Debug.LogWarning("Player Transform is not assigned.");
@@ -113,7 +120,7 @@ public class bossthrow : MonoBehaviour
         
         GameObject newBomb = Instantiate(bombOb, transform.position, throwPoint.transform.rotation*Quaternion.Euler(0,0,90));
         newBomb.GetComponent<Rigidbody2D>().AddForce(newBomb.transform.up * -5,ForceMode2D.Impulse);
-        
+        surutan.isthrowed = true;
     }
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -123,6 +130,10 @@ public class bossthrow : MonoBehaviour
         {
             hp -= 5f;
         }
+
+        
         
     }
+    
+    
 }

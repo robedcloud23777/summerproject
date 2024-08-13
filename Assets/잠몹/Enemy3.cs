@@ -12,6 +12,7 @@ public class Enemy3 : MonoBehaviour
     public float slashRate = 2f; //  속도 (초 단위)
     public Transform player; // 플레이어의 Transform
     public float hp = 10f;
+    public int drop = 0;
     
     public Transform slashPoint; // 총알 발사 위치
     public float attackrange = 1f;
@@ -32,6 +33,19 @@ public class Enemy3 : MonoBehaviour
 
     private void Update()
     {
+        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            drop = Random.Range(1, 10);
+            if (drop == 1)
+            {
+                Instantiate(tnfbxks, transform.position, shootPoint.transform.rotation * Quaternion.Euler(0, 0, 90);
+                tnfbxks.GetComponent<Rigidbody2D>().AddForce(tnfbxks.transform.up * -2, ForceMode2D.Impulse);
+            }
+        }
+        
+        
         if (player == null)
         {
             Debug.LogWarning("Player Transform is not assigned.");

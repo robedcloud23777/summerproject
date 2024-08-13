@@ -13,12 +13,14 @@ public class EnemyAI : MonoBehaviour
     public GameObject bulletPrefab; // 총알 프리팹
     public Transform shootPoint; // 총알 발사 위치
     public float hp = 10f;
+    public int drop = 0;
 
     private Vector2 targetPosition;
     private float timer;
     private bool followingPlayer;
     private bool isShooting;
     private float lastFireTime;
+    
 
     private void Start()
     {
@@ -29,6 +31,17 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            drop = Random.Range(1, 10);
+            if (drop == 1)
+            {
+                Instantiate(tnfbxks, transform.position, shootPoint.transform.rotation * Quaternion.Euler(0, 0, 90);
+                tnfbxks.GetComponent<Rigidbody2D>().AddForce(tnfbxks.transform.up * -2, ForceMode2D.Impulse);
+            }
+        }
+
         if (player == null)
         {
             Debug.LogWarning("Player Transform is not assigned.");

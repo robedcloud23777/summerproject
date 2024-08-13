@@ -32,6 +32,11 @@ public class bosssword : MonoBehaviour
 
     private void Update()
     {
+        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         if (player == null)
         {
             Debug.LogWarning("Player Transform is not assigned.");

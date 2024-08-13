@@ -11,11 +11,20 @@ public class Enemy2 : MonoBehaviour
     public float speed = 6f; // 적의 이동 속도
     public Transform player; // 플레이어의 위치
     public float hp = 10f;
-
+    public int drop = 0;
     // Update is called once per frame
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            drop = Random.Range(1, 10);
+            if (drop == 1)
+            {
+                Instantiate(tnfbxks, transform.position, shootPoint.transform.rotation * Quaternion.Euler(0, 0, 90);
+                tnfbxks.GetComponent<Rigidbody2D>().AddForce(tnfbxks.transform.up * -2, ForceMode2D.Impulse);
+            }
+        }
         
         
         MoveTowardsPlayer();

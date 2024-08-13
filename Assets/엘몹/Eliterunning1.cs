@@ -13,7 +13,7 @@ public class Eliterunning1 : MonoBehaviour
     public GameObject bulletPrefab; // 총알 프리팹
     public Transform shootPoint; // 총알 발사 위치
     public float hp = 30f;
-
+    public int drop = 0;
     private Vector2 targetPosition;
     private float timer;
     private bool followingPlayer;
@@ -29,6 +29,19 @@ public class Eliterunning1 : MonoBehaviour
 
     private void Update()
     {
+        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            drop = Random.Range(1, 5);
+            if (drop == 1)
+            {
+                Instantiate(weapon, transform.position, shootPoint.transform.rotation * Quaternion.Euler(0, 0, 90);
+                weapon.GetComponent<Rigidbody2D>().AddForce(weapon.transform.up * -2,ForceMode2D.Impulse);
+            }
+
+
+        }
         if (player == null)
         {
             Debug.LogWarning("Player Transform is not assigned.");
