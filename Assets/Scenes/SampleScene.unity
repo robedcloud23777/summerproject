@@ -282,19 +282,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 37030245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1d79803c3cd7b47a2dde3941bedc3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4387bd8f57a75b041b29e332cccddff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
-  bulletSpawnPoint: {fileID: 1574627017}
-  bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
+  moveSpeed: 2
+  changeDirectionTime: 5
+  wanderRange: 10
+  rotationSpeed: 360
+  detectionRadius: 5
+  shootDistance: 3
+  fireRate: 1
   player: {fileID: 675514251}
-  speed: 3
-  stopRange: 7
-  waitTimer: 0
-  isStopped: 0
-  waitTime: 0
-  bulletForce: 700
+  bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
+  shootPoint: {fileID: 1574627017}
 --- !u!1 &435624565
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ Transform:
   m_GameObject: {fileID: 675514248}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.73, y: -0.56, z: 0}
+  m_LocalPosition: {x: 16.59, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 0.94281805, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1003,6 +1003,9 @@ MonoBehaviour:
   isStopped: 0
   waitTime: 0
   bulletForce: 700
+  playerrange: 20
+  movementRange: 1
+  speeds: 1
 --- !u!58 &1199172879
 CircleCollider2D:
   m_ObjectHideFlags: 0

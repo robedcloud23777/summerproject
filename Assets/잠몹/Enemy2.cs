@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-    public Player player;
+    public Player player1;
     public float stopRange = 1f;
     public float speed = 6f; // 적의 이동 속도
-    public Transform playertransform; // 플레이어의 위치
+    public Transform player; // 플레이어의 위치
     public float hp = 10f;
 
     // Update is called once per frame
@@ -20,10 +20,11 @@ public class Enemy2 : MonoBehaviour
         
         MoveTowardsPlayer();
         Rotate();
-        float distance = Vector2.Distance(transform.position, playertransform.position);
+        float distance = Vector2.Distance(transform.position, player.position);
 
         if (distance <= stopRange)
         {
+            
             Explode();
         }
     }
@@ -33,7 +34,7 @@ public class Enemy2 : MonoBehaviour
     void Rotate()
     {
         // 플레이어를 향한 방향 벡터 계산
-        Vector3 direction = playertransform.position - transform.position;
+        Vector3 direction = player.position - transform.position;
         
         // 방향 벡터를 각도로 변환
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -48,7 +49,7 @@ public class Enemy2 : MonoBehaviour
 
 
         // 플레이어를 향한 방향 벡터 계산
-        Vector3 direction = (playertransform.position - transform.position).normalized;
+        Vector3 direction = (player.position - transform.position).normalized;
 
         // 적의 위치를 플레이어를 향해 업데이트
         transform.position += direction * speed * Time.deltaTime;
@@ -56,16 +57,7 @@ public class Enemy2 : MonoBehaviour
     }
     
     
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-
-       
-
-        if (collision.gameObject.CompareTag("bullet"))
-        {
-            hp -= 5;
-        }
-    }
+    
     
     
     void Explode()
@@ -74,10 +66,20 @@ public class Enemy2 : MonoBehaviour
         
         
         
-        player.hp -= 5;
+        player1.hp -= 5;
         
 
         // 자폭 후 적 오브젝트를 파괴
         Destroy(gameObject);
+    }
+    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 충돌한 오브젝트가 적인지 확인
+        if (collision.CompareTag("bullet"))
+        {
+            hp -= 5f;
+        }
+        
     }
 }
