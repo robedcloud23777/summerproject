@@ -681,7 +681,7 @@ MonoBehaviour:
   hp: 0
   dashPannel: {fileID: 1813637595}
   dashCooltime: 5
-  moveSpeed: 10
+  moveSpeed: 5
   dashSpeed: 40
   gun: {fileID: 2088763355}
 --- !u!70 &438880577

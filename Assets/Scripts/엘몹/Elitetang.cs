@@ -13,9 +13,12 @@ public class Elitetang : MonoBehaviour
     public float fireRate = 2.2f; // 연사 속도 (초 단위)
     public GameObject bulletPrefab; // 총알 프리팹
     public Transform shootPoint; // 총알 발사 위치
+    public float raycastDistance = 20f; // Raycast 거리 (충돌 감지 거리)
+    public LayerMask obstacleLayer; // 장애물 레이어
     public int hp = 50;
     public int drop = 0;
     public GameObject weapon;
+    private Rigidbody2D rb;
 
 
     private Vector2 targetPosition;
@@ -28,6 +31,7 @@ public class Elitetang : MonoBehaviour
     {
         Player = GameObject.Find("player");
         player1 = Player.GetComponent<Player>();
+        rb = GetComponent<Rigidbody2D>();
         timer = changeDirectionTime;
         lastFireTime = -fireRate; // 처음 발사 시간을 초기화하여 첫 발사가 가능하도록 설정
         SetNewRandomPosition();
@@ -64,7 +68,7 @@ public class Elitetang : MonoBehaviour
             // 멈춤
             moveSpeed = 0f;
         }
-        else if (followingPlayer)
+        else if (followingPlayer && !IsPlayerObstructed())
         {
             // 플레이어를 향해 이동
             targetPosition = Player.transform.position;
@@ -95,9 +99,8 @@ public class Elitetang : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        float step = moveSpeed * Time.deltaTime;
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
+        rb.AddForce(direction * moveSpeed);
 
         if (!followingPlayer && Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
@@ -147,7 +150,17 @@ public class Elitetang : MonoBehaviour
             }
         }
     }
-    
+    private bool IsPlayerObstructed()
+    {
+        Vector2 directionToPlayer = (Player.transform.position - transform.position).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, raycastDistance, obstacleLayer);
+
+        // 디버그: 레이캐스트 시각화
+        Debug.DrawRay(transform.position, directionToPlayer * raycastDistance, Color.red);
+
+        return hit.collider != null && hit.collider.gameObject != Player;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         // 충돌한 오브젝트가 적인지 확인
@@ -155,6 +168,24 @@ public class Elitetang : MonoBehaviour
         {
             hp -= 1;
         }
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Map"))
+        {
+            ReverseDirection();
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            ReverseDirection();
+        }
+    }
+
+    private void ReverseDirection()
+    {
+        // 현재 이동 방향의 반대 방향으로 새로운 목표 위치를 설정
+        Vector2 currentDirection = (targetPosition - (Vector2)transform.position).normalized;
+        targetPosition = (Vector2)transform.position - currentDirection * wanderRange;
     }
 }

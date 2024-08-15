@@ -185,7 +185,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &301724064235777612
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -255,6 +255,10 @@ MonoBehaviour:
   fireRate: 2.2
   bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
   shootPoint: {fileID: 6126130595265054435}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 50
   drop: 0
   weapon: {fileID: 0}

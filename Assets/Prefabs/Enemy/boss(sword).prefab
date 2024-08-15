@@ -185,7 +185,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &2738741002220314294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -253,6 +253,10 @@ MonoBehaviour:
   detectionRadius: 10
   shootDistance: 3
   slashRate: 1.5
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 100
   slashPoint: {fileID: 2713750324907803663}
   attackrange: 1

@@ -12,6 +12,8 @@ public class Enemy2 : MonoBehaviour
     public float wanderRange = 10f; // 랜덤 이동 범위
     public float rotationSpeed = 360f; // 회전 속도 (도 단위)
     public float detectionRadius = 10f; // 플레이어 탐지 반경
+    public float raycastDistance = 20f; // Raycast 거리 (충돌 감지 거리)
+    public LayerMask obstacleLayer; // 장애물 레이어
     public int hp = 10;
     public int drop = 0;
     public GameObject tnfbxks;
@@ -28,6 +30,8 @@ public class Enemy2 : MonoBehaviour
         Player = GameObject.Find("player");
         player1 = Player.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 참조
+        SetNewRandomPosition(); // 초기 랜덤 위치 설정
+        timer = changeDirectionTime;
     }
 
     private void Update()
@@ -42,10 +46,18 @@ public class Enemy2 : MonoBehaviour
             drop = Random.Range(1, 10);
             if (drop == 1)
             {
-                Instantiate(tnfbxks, transform.position, gameObject.transform.rotation * Quaternion.Euler(0, 0, 90));
-                tnfbxks.GetComponent<Rigidbody2D>().AddForce(tnfbxks.transform.up * -2, ForceMode2D.Impulse);
+                if (tnfbxks != null)
+                {
+                    GameObject obj = Instantiate(tnfbxks, transform.position, Quaternion.Euler(0, 0, 90));
+                    Rigidbody2D objRb = obj.GetComponent<Rigidbody2D>();
+                    if (objRb != null)
+                    {
+                        objRb.AddForce(obj.transform.up * -2, ForceMode2D.Impulse);
+                    }
+                }
             }
             Destroy(gameObject);
+            return;
         }
 
         timer -= Time.deltaTime;
@@ -55,10 +67,20 @@ public class Enemy2 : MonoBehaviour
             timer = changeDirectionTime;
         }
 
-        Rotate();
         if (followingPlayer)
         {
-            MoveTowardsPlayer();
+            if (!IsPlayerObstructed())
+            {
+                MoveTowardsPlayer();
+            }
+            else
+            {
+                MoveTowardsTarget(); // 장애물이 있을 경우에는 타겟으로 이동
+            }
+        }
+        else
+        {
+            MoveTowardsTarget();
         }
 
         if (distanceToPlayer <= stopRange)
@@ -67,16 +89,11 @@ public class Enemy2 : MonoBehaviour
         }
     }
 
-    void Rotate()
+    private void RotateTowards(Vector2 direction)
     {
-        // 플레이어를 향한 방향 벡터 계산
-        Vector3 direction = Player.transform.position - transform.position;
-
-        // 방향 벡터를 각도로 변환
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // z축을 기준으로 회전 설정
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     private void SetNewRandomPosition()
@@ -86,13 +103,23 @@ public class Enemy2 : MonoBehaviour
         targetPosition = new Vector2(transform.position.x + randomX, transform.position.y + randomY);
     }
 
-    void MoveTowardsPlayer()
+    private void MoveTowardsTarget()
     {
-        // 플레이어를 향한 방향 벡터 계산
-        Vector3 direction = (Player.transform.position - transform.position).normalized;
+        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+        rb.velocity = direction * moveSpeed;
+        if (!followingPlayer && Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            SetNewRandomPosition();
+        }
 
-        // Rigidbody2D를 사용하여 힘을 가해 적이 플레이어를 향해 이동하도록 함
-        rb.AddForce(direction * moveSpeed, ForceMode2D.Force);
+        RotateTowards(direction);
+    }
+
+    private void MoveTowardsPlayer()
+    {
+        Vector2 direction = (Player.transform.position - transform.position).normalized;
+        rb.velocity = direction * moveSpeed;
+        RotateTowards(direction);
     }
 
     IEnumerator ExplodeAfterDelay(float delay)
@@ -102,20 +129,45 @@ public class Enemy2 : MonoBehaviour
         Explode();
     }
 
-    void Explode()
+    private void Explode()
     {
-        player1.hp -= 1;
-
-        // 자폭 후 적 오브젝트를 파괴
+        if (player1 != null)
+        {
+            player1.hp -= 1;
+        }
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private bool IsPlayerObstructed()
     {
-        // 충돌한 오브젝트가 적인지 확인
+        Vector2 directionToPlayer = (Player.transform.position - transform.position).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, raycastDistance, obstacleLayer);
+
+        // 디버그: 레이캐스트 시각화
+        Debug.DrawRay(transform.position, directionToPlayer * raycastDistance, Color.red);
+
+        return hit.collider != null && hit.collider.gameObject != Player;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.CompareTag("bullet"))
         {
             hp -= 1;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Enemy"))
+        {
+            ReverseDirection();
+        }
+    }
+
+    private void ReverseDirection()
+    {
+        Vector2 currentDirection = (targetPosition - (Vector2)transform.position).normalized;
+        targetPosition = (Vector2)transform.position - currentDirection * wanderRange;
     }
 }

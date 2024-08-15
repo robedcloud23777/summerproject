@@ -185,7 +185,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &1078072225890312437
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -247,14 +247,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  changeDirectionTime: 5
-  wanderRange: 10
+  changeDirectionTime: 2
+  wanderRange: 5
   rotationSpeed: 360
   detectionRadius: 10
   shootDistance: 3
   fireRate: 1
   bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
   shootPoint: {fileID: 3227485413924071786}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 10
   drop: 0
   tnfbxks: {fileID: 0}
