@@ -15,7 +15,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] Tilemap tileMap;
     [SerializeField] Tilemap ladderMap;
     [SerializeField] Tile roomTile;
-    [SerializeField] RuleTile wallRuleTile;
+    [SerializeField] Tile wallRuleTile;
     [SerializeField] Tile outTile; //방 외부의 타일
     [SerializeField] Tile startRoomTile; // 시작 방을 나타낼 타일
     [SerializeField] Tile bossRoomTile; // 보스 방을 나타낼 타일

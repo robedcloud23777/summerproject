@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe9e5539f4ce634787e52f2ecdec8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 100, y: 50}
+  mapSize: {x: 160, y: 80}
   minimumDevideRate: 0.4
   maximumDivideRate: 0.6
   line: {fileID: 154218918120945458, guid: 2beb3841ce44f574dbc85d99d2e1c1bb, type: 3}
@@ -758,7 +758,7 @@ MonoBehaviour:
   tileMap: {fileID: 2086670786}
   ladderMap: {fileID: 59331363}
   roomTile: {fileID: 11400000, guid: 7e3e53f8b263b314ab94343e93bf8cde, type: 2}
-  wallTile: {fileID: 11400000, guid: 05dd3df49e05a91408a970e52c854d80, type: 2}
+  wallRuleTile: {fileID: 11400000, guid: 05dd3df49e05a91408a970e52c854d80, type: 2}
   outTile: {fileID: 11400000, guid: c9f39a12c25bb6641a65ca6a02b3767e, type: 2}
   startRoomTile: {fileID: 11400000, guid: 623eb520f67d6254d9fe58f9a8babe2e, type: 2}
   bossRoomTile: {fileID: 11400000, guid: 623eb520f67d6254d9fe58f9a8babe2e, type: 2}
