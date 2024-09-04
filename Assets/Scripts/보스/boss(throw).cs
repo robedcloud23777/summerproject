@@ -15,8 +15,6 @@ public class bossthrow : MonoBehaviour
     public float shootDistance = 3f; // 총알 발사 거리
     public float fireRate = 1f; // 연사 속도 (초 단위)
     public Transform throwPoint; // 총알 발사 위치
-    public float raycastDistance = 20f; // Raycast 거리 (충돌 감지 거리)
-    public LayerMask obstacleLayer; // 장애물 레이어
     public int hp = 100;
     public surutan surutan;
 
@@ -31,7 +29,6 @@ public class bossthrow : MonoBehaviour
     {
         Player = GameObject.Find("player");
         player1 = Player.GetComponent<Player>();
-        rb = GetComponent<Rigidbody2D>();
         timer = changeDirectionTime;
         lastthrowTime = -fireRate; // 처음 발사 시간을 초기화하여 첫 발사가 가능하도록 설정
         SetNewRandomPosition();
@@ -62,7 +59,7 @@ public class bossthrow : MonoBehaviour
             // 멈춤
             moveSpeed = 0f;
         }
-        else if (followingPlayer && !IsPlayerObstructed())
+        else if (followingPlayer)
         {
             // 플레이어를 향해 이동
             targetPosition = Player.transform.position;
@@ -122,36 +119,6 @@ public class bossthrow : MonoBehaviour
 
         GameObject newBomb = Instantiate(bombOb, transform.position, throwPoint.transform.rotation * Quaternion.Euler(0, 0, 90));
         newBomb.GetComponent<Rigidbody2D>().AddForce(newBomb.transform.up * -5, ForceMode2D.Impulse);
-    }
-
-    private bool IsPlayerObstructed()
-    {
-        Vector2 directionToPlayer = (Player.transform.position - transform.position).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, raycastDistance, obstacleLayer);
-
-        // 디버그: 레이캐스트 시각화
-        Debug.DrawRay(transform.position, directionToPlayer * raycastDistance, Color.red);
-
-        return hit.collider != null && hit.collider.gameObject != Player;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Map"))
-        {
-            ReverseDirection();
-        }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            ReverseDirection();
-        }
-    }
-
-    private void ReverseDirection()
-    {
-        // 현재 이동 방향의 반대 방향으로 새로운 목표 위치를 설정
-        Vector2 currentDirection = (targetPosition - (Vector2)transform.position).normalized;
-        targetPosition = (Vector2)transform.position - currentDirection * wanderRange;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

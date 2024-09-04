@@ -160,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.95543164, b: 0, a: 1}
   m_FlipX: 0
@@ -253,10 +253,6 @@ MonoBehaviour:
   detectionRadius: 10
   shootDistance: 3
   slashRate: 1.5
-  raycastDistance: 20
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
   hp: 100
   slashPoint: {fileID: 2713750324907803663}
   attackrange: 1

@@ -6,17 +6,16 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] Vector2Int mapSize;
-    [SerializeField] float minimumDevideRate; //공간이 나눠지는 최소 비율
-    [SerializeField] float maximumDivideRate; //공간이 나눠지는 최대 비율
-    [SerializeField] private GameObject line; //lineRenderer를 사용해서 공간이 나눠진걸 시작적으로 보여주기 위함
-    [SerializeField] private GameObject map; //lineRenderer를 사용해서 첫 맵의 사이즈를 보여주기 위함
-    [SerializeField] private GameObject roomLine; //lineRenderer를 사용해서 방의 사이즈를 보여주기 위함
-    [SerializeField] private int maximumDepth; //트리의 높이, 높을 수록 방을 더 자세히 나누게 됨
+    [SerializeField] float minimumDevideRate; // 공간이 나눠지는 최소 비율
+    [SerializeField] float maximumDivideRate; // 공간이 나눠지는 최대 비율
+    [SerializeField] private GameObject line; // lineRenderer를 사용해서 공간이 나눠진걸 시각적으로 보여주기 위함
+    [SerializeField] private GameObject map; // lineRenderer를 사용해서 첫 맵의 사이즈를 보여주기 위함
+    [SerializeField] private GameObject roomLine; // lineRenderer를 사용해서 방의 사이즈를 보여주기 위함
+    [SerializeField] private int maximumDepth; // 트리의 높이, 높을수록 방을 더 자세히 나누게 됨
     [SerializeField] Tilemap tileMap;
     [SerializeField] Tilemap ladderMap;
-    [SerializeField] Tile roomTile;
-    [SerializeField] Tile wallRuleTile;
-    [SerializeField] Tile outTile; //방 외부의 타일
+    [SerializeField] RuleTile ruleTile; // 벽과 바닥을 하나의 룰 타일로 통합
+    [SerializeField] Tile outTile; // 방 외부의 타일
     [SerializeField] Tile startRoomTile; // 시작 방을 나타낼 타일
     [SerializeField] Tile bossRoomTile; // 보스 방을 나타낼 타일
     [SerializeField] Tile ladderTile; // 보스 방 중앙에 설치할 사다리 타일
@@ -26,7 +25,6 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int maxEnemiesPerRoom = 3; // 각 방의 최대 적 개수
     [SerializeField] private GameObject[] bossPrefabs; // 보스 프리팹 배열
 
-
     private Node startRoom; // 시작 방을 저장할 변수
     private Node bossRoom; // 보스 방을 저장할 변수
     private List<Node> leafNodes; // 리프 노드를 저장할 리스트
@@ -34,12 +32,12 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         leafNodes = new List<Node>();
-        FillBackground();//신 로드 시 전부다 바깥타일로 덮음
+        FillBackground(); // 신 로드 시 전부다 바깥타일로 덮음
         Node root = new Node(new RectInt(0, 0, mapSize.x, mapSize.y));
         Divide(root, 0);
         GenerateRoom(root, 0);
         GenerateLoad(root, 0);
-        FillWall(); //바깥과 방이 만나는 지점을 벽으로 칠해주는 함수
+        // FillWall() 제거 - RuleTile로 벽과 바닥을 처리
 
         // 시작 방과 보스 방 설정
         SetStartAndBossRoom();
@@ -50,31 +48,27 @@ public class MapGenerator : MonoBehaviour
         if (n == maximumDepth)
         {
             leafNodes.Add(tree); // 리프 노드를 리스트에 추가
-            return; //내가 원하는 높이에 도달하면 더 나눠주지 않는다.
+            return; // 내가 원하는 높이에 도달하면 더 나누지 않는다.
         }
 
         int maxLength = Mathf.Max(tree.nodeRect.width, tree.nodeRect.height);
-        //가로와 세로중 더 긴것을 구한후, 가로가 길다면 위 좌, 우로 세로가 더 길다면 위, 아래로 나눠주게 될 것이다.
         int split = Mathf.RoundToInt(Random.Range(maxLength * minimumDevideRate, maxLength * maximumDivideRate));
-        //나올 수 있는 최대 길이와 최소 길이중에서 랜덤으로 한 값을 선택
-        if (tree.nodeRect.width >= tree.nodeRect.height) //가로가 더 길었던 경우에는 좌 우로 나누게 될 것이며, 이 경우에는 세로 길이는 변하지 않는다.
+
+        if (tree.nodeRect.width >= tree.nodeRect.height)
         {
             tree.leftNode = new Node(new RectInt(tree.nodeRect.x, tree.nodeRect.y, split, tree.nodeRect.height));
-            //왼쪽 노드에 대한 정보다 
-            //위치는 좌측 하단 기준이므로 변하지 않으며, 가로 길이는 위에서 구한 랜덤값을 넣어준다.
             tree.rightNode = new Node(new RectInt(tree.nodeRect.x + split, tree.nodeRect.y, tree.nodeRect.width - split, tree.nodeRect.height));
-            //우측 노드에 대한 정보다 
-            //위치는 좌측 하단에서 오른쪽으로 가로 길이만큼 이동한 위치이며, 가로 길이는 기존 가로길이에서 새로 구한 가로값을 뺀 나머지 부분이 된다. 
         }
         else
         {
             tree.leftNode = new Node(new RectInt(tree.nodeRect.x, tree.nodeRect.y, tree.nodeRect.width, split));
             tree.rightNode = new Node(new RectInt(tree.nodeRect.x, tree.nodeRect.y + split, tree.nodeRect.width, tree.nodeRect.height - split));
         }
-        tree.leftNode.parNode = tree; //자식노드들의 부모노드를 나누기전 노드로 설정
+
+        tree.leftNode.parNode = tree; // 자식 노드들의 부모 노드를 나누기 전 노드로 설정
         tree.rightNode.parNode = tree;
-        Divide(tree.leftNode, n + 1); //왼쪽, 오른쪽 자식 노드들도 나눠준다.
-        Divide(tree.rightNode, n + 1);//왼쪽, 오른쪽 자식 노드들도 나눠준다.
+        Divide(tree.leftNode, n + 1); // 왼쪽, 오른쪽 자식 노드들도 나눠준다.
+        Divide(tree.rightNode, n + 1);
     }
 
     private RectInt GenerateRoom(Node tree, int n)
@@ -110,33 +104,40 @@ public class MapGenerator : MonoBehaviour
         return rect;
     }
 
-
-
     private void GenerateLoad(Node tree, int n)
     {
-        if (n == maximumDepth) //리프 노드라면 이을 자식이 없다.
+        if (n == maximumDepth) // 리프 노드라면 이을 자식이 없다.
             return;
+
         Vector2Int leftNodeCenter = tree.leftNode.center;
         Vector2Int rightNodeCenter = tree.rightNode.center;
 
-        for (int i = Mathf.Min(leftNodeCenter.x, rightNodeCenter.x); i <= Mathf.Max(leftNodeCenter.x, rightNodeCenter.x); i++)
+        // X 축으로 3칸 넓이의 길을 생성
+        for (int offset = -1; offset <= 1; offset++) // 중앙을 기준으로 왼쪽 1칸, 오른쪽 1칸 추가
         {
-            tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, leftNodeCenter.y - mapSize.y / 2, 0), roomTile);
+            for (int i = Mathf.Min(leftNodeCenter.x, rightNodeCenter.x); i <= Mathf.Max(leftNodeCenter.x, rightNodeCenter.x); i++)
+            {
+                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, leftNodeCenter.y - mapSize.y / 2 + offset, 0), ruleTile);
+            }
         }
 
-        for (int j = Mathf.Min(leftNodeCenter.y, rightNodeCenter.y); j <= Mathf.Max(leftNodeCenter.y, rightNodeCenter.y); j++)
+        // Y 축으로 3칸 넓이의 길을 생성
+        for (int offset = -1; offset <= 1; offset++) // 중앙을 기준으로 위쪽 1칸, 아래쪽 1칸 추가
         {
-            tileMap.SetTile(new Vector3Int(rightNodeCenter.x - mapSize.x / 2, j - mapSize.y / 2, 0), roomTile);
+            for (int j = Mathf.Min(leftNodeCenter.y, rightNodeCenter.y); j <= Mathf.Max(leftNodeCenter.y, rightNodeCenter.y); j++)
+            {
+                tileMap.SetTile(new Vector3Int(rightNodeCenter.x - mapSize.x / 2 + offset, j - mapSize.y / 2, 0), ruleTile);
+            }
         }
-        //이전 포스팅에서 선으로 만들었던 부분을 room tile로 채우는 과정
-        GenerateLoad(tree.leftNode, n + 1); //자식 노드들도 탐색
+
+        GenerateLoad(tree.leftNode, n + 1); // 자식 노드들도 탐색
         GenerateLoad(tree.rightNode, n + 1);
     }
 
-    void FillBackground() //배경을 채우는 함수, 씬 load시 가장 먼저 해준다.
+
+    void FillBackground() // 배경을 채우는 함수, 씬 로드시 가장 먼저 해준다.
     {
-        for (int i = -10; i < mapSize.x + 10; i++) //바깥타일은 맵 가장자리에 가도 어색하지 않게
-        //맵 크기보다 넓게 채워준다.
+        for (int i = -10; i < mapSize.x + 10; i++) // 바깥 타일은 맵 가장자리에 가도 어색하지 않게
         {
             for (int j = -10; j < mapSize.y + 10; j++)
             {
@@ -145,43 +146,16 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    void FillWall()
-    {
-        for (int i = 0; i < mapSize.x; i++)
-        {
-            for (int j = 0; j < mapSize.y; j++)
-            {
-                if (tileMap.GetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0)) == outTile)
-                {
-                    for (int x = -1; x <= 1; x++)
-                    {
-                        for (int y = -1; y <= 1; y++)
-                        {
-                            if (x == 0 && y == 0) continue;
-                            if (tileMap.GetTile(new Vector3Int(i - mapSize.x / 2 + x, j - mapSize.y / 2 + y, 0)) == roomTile)
-                            {
-                                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), wallRuleTile);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-
     private void FillRoom(RectInt rect)
-    {
+    { // room의 rect 정보를 받아서 타일을 set 해주는 함수
         for (int i = rect.x; i < rect.x + rect.width; i++)
         {
             for (int j = rect.y; j < rect.y + rect.height; j++)
             {
-                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), roomTile);
+                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), ruleTile);
             }
         }
     }
-
 
     private void SetStartAndBossRoom()
     {
@@ -204,16 +178,14 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-
-
     private void FillSpecialRoom(RectInt rect, TileType tileType)
     {
-        Tile specialTile = tileType == TileType.StartRoom ? startRoomTile : bossRoomTile; // 각각의 타일 타입에 맞는 타일을 설정
+        // 특수 방을 구분하기 위해 다른 룰이 필요하다면 ruleTile에 설정된 규칙을 사용
         for (int i = rect.x; i < rect.x + rect.width; i++)
         {
             for (int j = rect.y; j < rect.y + rect.height; j++)
             {
-                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), specialTile);
+                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), ruleTile);
             }
         }
     }
@@ -237,11 +209,12 @@ public class MapGenerator : MonoBehaviour
         Divide(root, 0);
         GenerateRoom(root, 0);
         GenerateLoad(root, 0);
-        FillWall(); // 벽 업데이트
+        // FillWall() 제거 - RuleTile로 벽과 바닥을 처리
 
         // 시작 방과 보스 방 설정
         SetStartAndBossRoom();
     }
+
     private void SpawnEnemies(RectInt roomRect)
     {
         int numberOfEnemies = Random.Range(minEnemiesPerRoom, maxEnemiesPerRoom + 1);
@@ -264,8 +237,6 @@ public class MapGenerator : MonoBehaviour
             enemy.transform.position = new Vector3(spawnPosition.x - mapSize.x / 2, spawnPosition.y - mapSize.y / 2, 0);
         }
     }
-
-
 }
 
 public class Node
@@ -273,15 +244,14 @@ public class Node
     public Node leftNode;
     public Node rightNode;
     public Node parNode;
-    public RectInt nodeRect; //분리된 공간의 rect정보
-    public RectInt roomRect; //분리된 공간 속 방의 rect정보
+    public RectInt nodeRect; // 분리된 공간의 rect 정보
+    public RectInt roomRect; // 분리된 공간 속 방의 rect 정보
     public Vector2Int center
     {
         get
         {
             return new Vector2Int(roomRect.x + roomRect.width / 2, roomRect.y + roomRect.height / 2);
         }
-        //방의 가운데 점. 방과 방을 이을 때 사용
     }
     public Node(RectInt rect)
     {

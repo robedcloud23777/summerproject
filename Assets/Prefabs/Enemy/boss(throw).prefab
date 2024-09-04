@@ -160,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0.9662237, a: 1}
   m_FlipX: 0
@@ -255,9 +255,5 @@ MonoBehaviour:
   shootDistance: 3
   fireRate: 1
   throwPoint: {fileID: 3648515306969397032}
-  raycastDistance: 20
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
   hp: 100
   surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
