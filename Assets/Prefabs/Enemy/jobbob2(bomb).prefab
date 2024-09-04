@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6718435405670711214}
   - component: {fileID: 7265384115292592683}
   - component: {fileID: 6248906043169539257}
+  - component: {fileID: -7626054244738293886}
   m_Layer: 0
   m_Name: jobbob2(bomb)
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.2748158, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -174,3 +175,26 @@ MonoBehaviour:
   hp: 10
   drop: 0
   tnfbxks: {fileID: 0}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &-7626054244738293886
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821822977051683760}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aad647663c50f3244b73f2eec615930f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -18,12 +18,18 @@ public class bosssword : MonoBehaviour
     public Transform slashPoint; // 총알 발사 위치
     public float attackrange = 1f;
     public float attackAngle = 110f;
+    
+    public float stopTime = 1f; // 멈춤 시간
+    public float stopChance = 0.5f; // 멈춤 확률 (0.0 ~ 1.0 사이)
 
     private Vector2 targetPosition;
     private float timer;
     private bool followingPlayer;
     private bool isslashing;
     private float lastslashTime;
+    private float stopTimer;
+    private bool isStopped;
+    private Animator animator;
     private Rigidbody2D rb;
 
     private void Start()
@@ -33,12 +39,22 @@ public class bosssword : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         timer = changeDirectionTime;
         lastslashTime = -slashRate; // 처음 발사 시간을 초기화하여 첫 발사가 가능하도록 설정
-        SetNewRandomPosition();
+        stopTimer = stopTime; // 멈춤 타이머 초기화
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
-        
+        if (isStopped)
+        {
+            animator.SetBool("move",false);
+            animator.SetBool("stop",true);
+        }
+        else
+        {
+            animator.SetBool("move",true);
+            animator.SetBool("stop",false);
+        }
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -70,18 +86,43 @@ public class bosssword : MonoBehaviour
         }
         else
         {
-            // 랜덤 이동
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            // 랜덤 멈춤 및 이동
+            if (!isStopped)
             {
-                SetNewRandomPosition();
-                timer = changeDirectionTime;
+                // 이동 중
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    
+                    if (Random.value < stopChance)
+                    {
+                        isStopped = true;
+                        stopTimer = stopTime;
+                        moveSpeed = 0f;
+                        
+                    }
+                    else
+                    {
+                        SetNewRandomPosition();
+                        timer = changeDirectionTime;
+                    }
+                }
             }
-
-            moveSpeed = 2f;
+            else
+            {
+                
+                // 멈춤 중
+                stopTimer -= Time.deltaTime;
+                if (stopTimer <= 0)
+                {
+                    isStopped = false;
+                    moveSpeed = 2f;
+                }
+            }
         }
 
         MoveTowardsTarget();
+        HandleDirection(); // 시선 처리
     }
 
     private void SetNewRandomPosition()
@@ -93,22 +134,61 @@ public class bosssword : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-        rb.AddForce(direction * moveSpeed);
-
-        if (!followingPlayer && Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        
+        if (moveSpeed > 0f)
         {
-            SetNewRandomPosition();
-        }
+            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            rb.AddForce(direction * moveSpeed);
 
-        RotateTowards(direction);
+            if (!followingPlayer && Vector2.Distance(transform.position, targetPosition) < 0.1f)
+            {
+                SetNewRandomPosition();
+            }
+        }
     }
 
-    private void RotateTowards(Vector2 direction)
+    private void HandleDirection()
     {
-        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        Vector2 target;
+
+        if (followingPlayer && !IsPlayerObstructed())
+        {
+            // 플레이어를 바라봄
+            target = Player.transform.position;
+
+            // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
+            if (target.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (target.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            // 총알 발사 위치 회전: 타겟을 향해 회전
+            Vector2 direction = target - (Vector2)slashPoint.position;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            slashPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+        }
+        else
+        {
+            // 플레이어가 장애물 뒤에 있을 때는 적이 현재 바라보고 있는 방향을 유지
+            // 기존 시선 유지 (총알 발사 위치도 함께 유지)
+            Vector2 currentDirection = rb.velocity.normalized;
+
+            if (currentDirection.x > 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (currentDirection.x < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            // 총알 발사 위치를 현재 적의 바라보는 방향으로 유지
+            slashPoint.eulerAngles = new Vector3(0, 0, slashPoint.eulerAngles.z);
+        }
     }
 
     public void TryslashAtPlayer()

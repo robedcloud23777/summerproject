@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8809585509398206835}
   - component: {fileID: 7235276527612856408}
   - component: {fileID: 385060160993526708}
+  - component: {fileID: 5431868223495179451}
   m_Layer: 0
   m_Name: jobbob3(sword)
   m_TagString: Enemy
@@ -160,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.1281209, b: 1, a: 1}
   m_FlipX: 0
@@ -263,3 +264,26 @@ MonoBehaviour:
   attackrange: 1
   attackAngle: 110
   tnfbxks: {fileID: 0}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &5431868223495179451
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967993637336003265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e6df5b6688ef0c4daff7a5103e77130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

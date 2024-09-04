@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6523430927243683942}
   - component: {fileID: 301724064235777612}
   - component: {fileID: 8185692571539603787}
+  - component: {fileID: -62186896870888988}
   m_Layer: 0
   m_Name: elite(tang)
   m_TagString: Enemy
@@ -160,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.53777516, b: 0, a: 1}
   m_FlipX: 0
@@ -262,3 +263,26 @@ MonoBehaviour:
   hp: 50
   drop: 0
   weapon: {fileID: 0}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &-62186896870888988
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785473356817732817}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37be8e04310b31e439ef5207d603e61c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
