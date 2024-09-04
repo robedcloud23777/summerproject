@@ -28,7 +28,14 @@ public class Enemy1 : MonoBehaviour
     private float lastFireTime;
     private float stopTimer;
     private bool isStopped;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    private Animator animator;
+=======
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
 
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
     private Rigidbody2D rb;
 
     private void Start()
@@ -39,10 +46,27 @@ public class Enemy1 : MonoBehaviour
         timer = changeDirectionTime;
         lastFireTime = -fireRate; // 처음 발사 시간을 초기화하여 첫 발사가 가능하도록 설정
         stopTimer = stopTime; // 멈춤 타이머 초기화
+<<<<<<< HEAD
+<<<<<<< HEAD
+        animator = gameObject.GetComponent<Animator>();
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
     }
 
     private void Update()
     {
+        if (isStopped)
+        {
+            animator.SetBool("move",false);
+            animator.SetBool("stop",true);
+        }
+        else
+        {
+            animator.SetBool("move",true);
+            animator.SetBool("stop",false);
+        }
         if (hp <= 0)
         {
             drop = Random.Range(1, 10);
@@ -81,11 +105,25 @@ public class Enemy1 : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
                     if (Random.value < stopChance)
                     {
                         isStopped = true;
                         stopTimer = stopTime;
                         moveSpeed = 0f;
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
                     }
                     else
                     {
@@ -96,6 +134,13 @@ public class Enemy1 : MonoBehaviour
             }
             else
             {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
                 // 멈춤 중
                 stopTimer -= Time.deltaTime;
                 if (stopTimer <= 0)
@@ -119,6 +164,13 @@ public class Enemy1 : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
         if (moveSpeed > 0f)
         {
             Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
@@ -133,6 +185,51 @@ public class Enemy1 : MonoBehaviour
 
     private void HandleDirection()
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        Vector2 target;
+
+        if (followingPlayer && !IsPlayerObstructed())
+        {
+            // 플레이어를 바라봄
+            target = Player.transform.position;
+
+            // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
+            if (target.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (target.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            // 총알 발사 위치 회전: 타겟을 향해 회전
+            Vector2 direction = target - (Vector2)shootPoint.position;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            shootPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+        }
+        else
+        {
+            // 플레이어가 장애물 뒤에 있을 때는 적이 현재 바라보고 있는 방향을 유지
+            // 기존 시선 유지 (총알 발사 위치도 함께 유지)
+            Vector2 currentDirection = rb.velocity.normalized;
+
+            if (currentDirection.x > 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (currentDirection.x < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            // 총알 발사 위치를 현재 적의 바라보는 방향으로 유지
+            shootPoint.eulerAngles = new Vector3(0, 0, shootPoint.eulerAngles.z);
+        }
+=======
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
         Vector2 target = followingPlayer ? Player.transform.position : targetPosition;
 
         // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
@@ -149,10 +246,21 @@ public class Enemy1 : MonoBehaviour
         Vector2 direction = target - (Vector2)shootPoint.position;
         float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         shootPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+<<<<<<< HEAD
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
     }
 
     private void TryShootAtPlayer()
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
         if (Time.time - lastFireTime >= fireRate)
         {
             ShootAtPlayer();
@@ -199,4 +307,12 @@ public class Enemy1 : MonoBehaviour
         Vector2 currentDirection = (targetPosition - (Vector2)transform.position).normalized;
         targetPosition = (Vector2)transform.position - currentDirection * wanderRange;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674

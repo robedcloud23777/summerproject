@@ -14,8 +14,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int maximumDepth; //트리의 높이, 높을 수록 방을 더 자세히 나누게 됨
     [SerializeField] Tilemap tileMap;
     [SerializeField] Tilemap ladderMap;
-    [SerializeField] Tile roomTile; //방을 구성하는 타일
-    [SerializeField] Tile wallTile; //방과 외부를 구분지어줄 벽 타일
+    [SerializeField] Tile roomTile;
+    [SerializeField] Tile wallRuleTile;
     [SerializeField] Tile outTile; //방 외부의 타일
     [SerializeField] Tile startRoomTile; // 시작 방을 나타낼 타일
     [SerializeField] Tile bossRoomTile; // 보스 방을 나타낼 타일
@@ -145,23 +145,22 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    void FillWall() //룸 타일과 바깥 타일이 만나는 부분
+    void FillWall()
     {
-        for (int i = 0; i < mapSize.x; i++) //타일 전체를 순회
+        for (int i = 0; i < mapSize.x; i++)
         {
             for (int j = 0; j < mapSize.y; j++)
             {
                 if (tileMap.GetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0)) == outTile)
                 {
-                    //바깥타일 일 경우
                     for (int x = -1; x <= 1; x++)
                     {
                         for (int y = -1; y <= 1; y++)
                         {
-                            if (x == 0 && y == 0) continue;//바깥 타일 기준 8방향을 탐색해서 room tile이 있다면 wall tile로 바꿔준다.
+                            if (x == 0 && y == 0) continue;
                             if (tileMap.GetTile(new Vector3Int(i - mapSize.x / 2 + x, j - mapSize.y / 2 + y, 0)) == roomTile)
                             {
-                                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), wallTile);
+                                tileMap.SetTile(new Vector3Int(i - mapSize.x / 2, j - mapSize.y / 2, 0), wallRuleTile);
                                 break;
                             }
                         }
@@ -171,8 +170,9 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
+
     private void FillRoom(RectInt rect)
-    { //room의 rect정보를 받아서 tile을 set해주는 함수
+    {
         for (int i = rect.x; i < rect.x + rect.width; i++)
         {
             for (int j = rect.y; j < rect.y + rect.height; j++)
@@ -181,6 +181,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
+
 
     private void SetStartAndBossRoom()
     {

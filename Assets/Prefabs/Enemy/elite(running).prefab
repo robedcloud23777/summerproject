@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5397798292679460639}
   - component: {fileID: 2343947249219645015}
   - component: {fileID: 3836700599343164697}
+  - component: {fileID: -8834098256006820256}
   m_Layer: 0
   m_Name: elite(running)
   m_TagString: Enemy
@@ -255,6 +256,34 @@ MonoBehaviour:
   fireRate: 1.5
   bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
   shootPoint: {fileID: 266312602038197484}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 30
   drop: 0
   weapon: {fileID: 0}
+  animator: {fileID: 0}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &-8834098256006820256
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2992891395706475583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6600aabe0ecd62469580b4b02ce3642, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

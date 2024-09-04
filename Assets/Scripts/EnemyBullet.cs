@@ -23,5 +23,10 @@ public class EnemyBullet : MonoBehaviour
             player1.hp -= 1;
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Map"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

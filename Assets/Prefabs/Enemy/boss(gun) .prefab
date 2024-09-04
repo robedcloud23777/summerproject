@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2610225140042948242}
   - component: {fileID: 4251330628677201549}
   - component: {fileID: 5103656287232879452}
+  - component: {fileID: -4412456727377558666}
   m_Layer: 0
   m_Name: 'boss(gun) '
   m_TagString: Enemy
@@ -255,4 +256,31 @@ MonoBehaviour:
   fireRate: 0.5
   bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
   shootPoint: {fileID: 4193883433608829010}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 100
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &-4412456727377558666
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359080551742496405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e65f8a4dd6022f479e92d73ed5670ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

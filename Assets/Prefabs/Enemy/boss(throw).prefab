@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6869265578842265911}
   - component: {fileID: 4102867798251293103}
   - component: {fileID: 3477598961822019914}
+  - component: {fileID: 3696864164538508109}
   m_Layer: 0
   m_Name: boss(throw)
   m_TagString: Enemy
@@ -255,5 +256,32 @@ MonoBehaviour:
   shootDistance: 3
   fireRate: 1
   throwPoint: {fileID: 3648515306969397032}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   hp: 100
   surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &3696864164538508109
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681260567946442806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794b1407b6674fd41aaca27595701144, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

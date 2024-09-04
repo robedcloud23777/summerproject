@@ -11,9 +11,21 @@ GameObject:
   - component: {fileID: 5179465353976700004}
   - component: {fileID: 3258070410355230630}
   - component: {fileID: 8683708017775215463}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - component: {fileID: 1078072225890312437}
+  - component: {fileID: 3446585314180545203}
+  - component: {fileID: 1754091454530068085}
+=======
   - component: {fileID: 3446585314180545203}
   - component: {fileID: 8182484060891540382}
   - component: {fileID: 2257972947083833643}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+  - component: {fileID: 3446585314180545203}
+  - component: {fileID: 8182484060891540382}
+  - component: {fileID: 2257972947083833643}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
   m_Layer: 0
   m_Name: jobbob1(gun)
   m_TagString: Enemy
@@ -77,8 +89,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+=======
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6323fd2188afcc24194bd79c24bfa24e, type: 3}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 6323fd2188afcc24194bd79c24bfa24e, type: 3}
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,6 +138,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!58 &1078072225890312437
+CircleCollider2D:
+=======
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
 --- !u!114 &3446585314180545203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +197,10 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &2257972947083833643
 CapsuleCollider2D:
+<<<<<<< HEAD
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -205,6 +238,62 @@ CapsuleCollider2D:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_Radius: 0.5
+--- !u!114 &3446585314180545203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848428866058298811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1d79803c3cd7b47a2dde3941bedc3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  changeDirectionTime: 2
+  wanderRange: 5
+  detectionRadius: 10
+  shootDistance: 3
+  fireRate: 1
+  bulletPrefab: {fileID: 8313435141284214748, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
+  shootPoint: {fileID: 3227485413924071786}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  hp: 10
+  drop: 0
+  tnfbxks: {fileID: 0}
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &1754091454530068085
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848428866058298811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08701b891b1b061489dbb7544428057b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+=======
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 5179465353976700004}
@@ -276,3 +365,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6469102842958901295, guid: 152e7cdd31d2bab4ebf6fd1353cf61e4, type: 3}
   m_PrefabInstance: {fileID: 1091573934207070990}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
+=======
+>>>>>>> 21ba89bea4921a48af6ccd1250ccf813eda72674
