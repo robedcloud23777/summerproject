@@ -32,7 +32,7 @@ public class Enemy3 : MonoBehaviour
     private bool isStopped;
     private float lastslashTime;
     private Animator animator;
-    
+    public float maxSpeed = 10f;
     private Rigidbody2D rb;
 
     private void Start()
@@ -45,7 +45,16 @@ public class Enemy3 : MonoBehaviour
         stopTimer = stopTime; // 멈춤 타이머 초기화
         animator = gameObject.GetComponent<Animator>();
     }
-
+    
+    void FixedUpdate()
+    {
+        // 현재 속도를 확인
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            // 최대 속력으로 제한
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
     private void Update()
     {
         if (isStopped)
@@ -152,46 +161,55 @@ public class Enemy3 : MonoBehaviour
 
     private void HandleDirection()
     {
-        Vector2 target;
+        Vector2 target = followingPlayer ? Player.transform.position : targetPosition;
 
-        if (followingPlayer && !IsPlayerObstructed())
+        // isShooting 상태에 따라 시선 처리
+        if (isslashing)
         {
-            // 플레이어를 바라봄
-            target = Player.transform.position;
-
-            // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
-            if (target.x > transform.position.x)
+            // 총을 쏘는 방향으로 시선을 맞춤
+            Vector2 shootDirection = target - (Vector2)transform.position;
+            if (shootDirection.x > 0)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (target.x < transform.position.x)
+            else if (shootDirection.x < 0)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
 
             // 총알 발사 위치 회전: 타겟을 향해 회전
             Vector2 direction = target - (Vector2)slashPoint.position;
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             slashPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+            if (targetAngle > 90 || targetAngle < -90)
+            {
+                Debug.Log(targetAngle);
+                slashPoint.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {   
+                
+                slashPoint.GetComponent<SpriteRenderer>().flipY = false;
+            }
         }
         else
         {
-            // 플레이어가 장애물 뒤에 있을 때는 적이 현재 바라보고 있는 방향을 유지
-            // 기존 시선 유지 (총알 발사 위치도 함께 유지)
-            Vector2 currentDirection = rb.velocity.normalized;
+            // 이동 방향에 따른 시선 처리
+            Vector2 velocity = rb.velocity; // Rigidbody2D의 속도를 이용해 이동 방향을 얻음
 
-            if (currentDirection.x > 0)
+            if (velocity.x > 0) // 오른쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (currentDirection.x < 0)
+            else if (velocity.x < 0) // 왼쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
-
-            // 총알 발사 위치를 현재 적의 바라보는 방향으로 유지
-            slashPoint.eulerAngles = new Vector3(0, 0, slashPoint.eulerAngles.z);
         }
+        float DFP = 0.1f;
+        Vector2 rks = (target - (Vector2)transform.position).normalized;
+        slashPoint.transform.position = (Vector2)transform.position + rks * DFP;
+        
     }
 
     public void TryslashAtPlayer()

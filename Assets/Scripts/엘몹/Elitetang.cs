@@ -20,6 +20,7 @@ public class Elitetang : MonoBehaviour
     public GameObject weapon;
     private Rigidbody2D rb;
     private Animator animator;
+    public float maxSpeed = 10f;
 
 
     public float stopTime = 1f; // 멈춤 시간
@@ -42,6 +43,15 @@ public class Elitetang : MonoBehaviour
         SetNewRandomPosition();
         stopTimer = stopTime; // 멈춤 타이머 초기화
         animator = gameObject.GetComponent<Animator>();
+    }
+    void FixedUpdate()
+    {
+        // 현재 속도를 확인
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            // 최대 속력으로 제한
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
     }
 
     private void Update()
@@ -158,46 +168,55 @@ public class Elitetang : MonoBehaviour
 
     private void HandleDirection()
     {
-        Vector2 target;
+        Vector2 target = followingPlayer ? Player.transform.position : targetPosition;
 
-        if (followingPlayer && !IsPlayerObstructed())
+        // isShooting 상태에 따라 시선 처리
+        if (isShooting)
         {
-            // 플레이어를 바라봄
-            target = Player.transform.position;
-
-            // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
-            if (target.x > transform.position.x)
+            // 총을 쏘는 방향으로 시선을 맞춤
+            Vector2 shootDirection = target - (Vector2)transform.position;
+            if (shootDirection.x > 0)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (target.x < transform.position.x)
+            else if (shootDirection.x < 0)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
 
             // 총알 발사 위치 회전: 타겟을 향해 회전
             Vector2 direction = target - (Vector2)shootPoint.position;
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             shootPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+            if (targetAngle > 90 || targetAngle < -90)
+            {
+                Debug.Log(targetAngle);
+                shootPoint.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {   
+                
+                shootPoint.GetComponent<SpriteRenderer>().flipY = false;
+            }
         }
         else
         {
-            // 플레이어가 장애물 뒤에 있을 때는 적이 현재 바라보고 있는 방향을 유지
-            // 기존 시선 유지 (총알 발사 위치도 함께 유지)
-            Vector2 currentDirection = rb.velocity.normalized;
+            // 이동 방향에 따른 시선 처리
+            Vector2 velocity = rb.velocity; // Rigidbody2D의 속도를 이용해 이동 방향을 얻음
 
-            if (currentDirection.x > 0)
+            if (velocity.x > 0) // 오른쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (currentDirection.x < 0)
+            else if (velocity.x < 0) // 왼쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
-
-            // 총알 발사 위치를 현재 적의 바라보는 방향으로 유지
-            shootPoint.eulerAngles = new Vector3(0, 0, shootPoint.eulerAngles.z);
         }
+        float DFP = 0.1f;
+        Vector2 rks = (target - (Vector2)transform.position).normalized;
+        shootPoint.transform.position = (Vector2)transform.position + rks * DFP;
+        
     }
 
     private void TryShootAtPlayer()
@@ -212,24 +231,26 @@ public class Elitetang : MonoBehaviour
 
     private void ShootAtPlayer()
     {
-        int bulletCount = 10; // 발사할 총알 개수
-        float spreadAngle = 30f; // 총알 퍼짐 각도 (양옆으로 30도씩 퍼지도록 설정)
+        isStopped = true;
+    
+        // 샷건 효과: 10발의 총알을 발사
+        int numberOfBullets = 5;
+        float spreadAngle = 30f; // 총알 퍼지는 각도 (각도 범위 내에서 퍼짐)
+        float angleStep = spreadAngle / (numberOfBullets - 1); // 각 총알 사이의 각도 차이
+        float startAngle = -spreadAngle / 2; // 첫 총알이 시작하는 각도
 
-        for (int i = 0; i < bulletCount; i++)
+        for (int i = 0; i < numberOfBullets; i++)
         {
-            // 총알의 퍼짐 각도 계산
-            float angleStep = spreadAngle / (bulletCount - 1);
-            float currentAngle = -spreadAngle / 2 + angleStep * i;
-
-            // 총알 프리팹 인스턴스화
-            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position,
-                transform.rotation * Quaternion.Euler(0, 0, currentAngle - 90));
-
-            // 총알의 방향 설정 (플레이어를 향함)
+            // 각 총알의 각도를 계산
+            float angle = startAngle + (angleStep * i);
+            Quaternion rotation = shootPoint.rotation * Quaternion.Euler(0, 0, angle);
+        
+            // 총알을 생성하고 발사
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.AddForce(rb.transform.up * 200);
+                rb.AddForce(rotation * Vector2.right * 200);
             }
         }
     }
