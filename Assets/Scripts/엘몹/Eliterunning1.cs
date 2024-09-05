@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Eliterunning1 : MonoBehaviour
 {
@@ -27,9 +28,12 @@ public class Eliterunning1 : MonoBehaviour
     public Animator animator;
     private float stopTimer;
     private bool isStopped;
-    
+    public float maxSpeed = 10f;
     public float stopTime = 1f; // 멈춤 시간
     public float stopChance = 0.5f; // 멈춤 확률 (0.0 ~ 1.0 사이)
+    private Renderer _renderer;
+    private Color _originalColor;
+    public Color damageColor = Color.red; // 데미지 색상
     private void Start()
     {
         Player = GameObject.Find("player");
@@ -40,6 +44,18 @@ public class Eliterunning1 : MonoBehaviour
         SetNewRandomPosition();
         stopTimer = stopTime; // 멈춤 타이머 초기화
         animator = gameObject.GetComponent<Animator>();
+        _renderer = GetComponent<Renderer>();
+        _originalColor = _renderer.material.color;
+    }
+    
+    void FixedUpdate()
+    {
+        // 현재 속도를 확인
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            // 최대 속력으로 제한
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
     }
 
     private void Update()
@@ -156,46 +172,55 @@ public class Eliterunning1 : MonoBehaviour
 
     private void HandleDirection()
     {
-        Vector2 target;
+        Vector2 target = followingPlayer ? Player.transform.position : targetPosition;
 
-        if (followingPlayer && !IsPlayerObstructed())
+        // isShooting 상태에 따라 시선 처리
+        if (isShooting)
         {
-            // 플레이어를 바라봄
-            target = Player.transform.position;
-
-            // 시선 처리: 타겟이 오른쪽에 있으면 시선을 오른쪽으로, 왼쪽에 있으면 왼쪽으로
-            if (target.x > transform.position.x)
+            // 총을 쏘는 방향으로 시선을 맞춤
+            Vector2 shootDirection = target - (Vector2)transform.position;
+            if (shootDirection.x > 0)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (target.x < transform.position.x)
+            else if (shootDirection.x < 0)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
 
             // 총알 발사 위치 회전: 타겟을 향해 회전
             Vector2 direction = target - (Vector2)shootPoint.position;
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             shootPoint.eulerAngles = new Vector3(0, 0, targetAngle);
+            if (targetAngle > 90 || targetAngle < -90)
+            {
+                Debug.Log(targetAngle);
+                shootPoint.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {   
+                
+                shootPoint.GetComponent<SpriteRenderer>().flipY = false;
+            }
         }
         else
         {
-            // 플레이어가 장애물 뒤에 있을 때는 적이 현재 바라보고 있는 방향을 유지
-            // 기존 시선 유지 (총알 발사 위치도 함께 유지)
-            Vector2 currentDirection = rb.velocity.normalized;
+            // 이동 방향에 따른 시선 처리
+            Vector2 velocity = rb.velocity; // Rigidbody2D의 속도를 이용해 이동 방향을 얻음
 
-            if (currentDirection.x > 0)
+            if (velocity.x > 0) // 오른쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
             }
-            else if (currentDirection.x < 0)
+            else if (velocity.x < 0) // 왼쪽으로 이동 중일 때
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
             }
-
-            // 총알 발사 위치를 현재 적의 바라보는 방향으로 유지
-            shootPoint.eulerAngles = new Vector3(0, 0, shootPoint.eulerAngles.z);
         }
+        float DFP = 0.1f;
+        Vector2 rks = (target - (Vector2)transform.position).normalized;
+        shootPoint.transform.position = (Vector2)transform.position + rks * DFP;
+        
     }
 
     public void TryShootAtPlayer()
@@ -208,18 +233,15 @@ public class Eliterunning1 : MonoBehaviour
         }
     }
 
-    public  void ShootAtPlayer()
+    private void ShootAtPlayer()
     {
-        // 총알 프리팹 인스턴스화
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position,
-            transform.rotation * Quaternion.Euler(0, 0, -90));
-
-        // 총알의 방향 설정 (플레이어를 향함)
+        
+        isStopped = true;
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-
-            rb.AddForce(rb.transform.up * 200);
+            rb.AddForce(shootPoint.right * 200);
         }
     }
     private bool IsPlayerObstructed()
@@ -235,11 +257,18 @@ public class Eliterunning1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // 충돌한 오브젝트가 적인지 확인
         if (collision.CompareTag("bullet"))
         {
             hp -= 1;
+            StartCoroutine(FlashDamageColor());
         }
+    }
+
+    private IEnumerator FlashDamageColor()
+    {
+        _renderer.material.color = damageColor;
+        yield return new WaitForSeconds(0.1f);
+        _renderer.material.color = _originalColor;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

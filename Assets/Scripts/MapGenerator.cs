@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Accessibility;
 using UnityEngine.Tilemaps;
 
 public class MapGenerator : MonoBehaviour
@@ -22,6 +23,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int minEnemiesPerRoom = 1; // 각 방의 최소 적 개수
     [SerializeField] private int maxEnemiesPerRoom = 3; // 각 방의 최대 적 개수
     [SerializeField] private GameObject[] bossPrefabs; // 보스 프리팹 배열
+    [SerializeField] public int stage; // 스테이지
 
     private Node startRoom; // 시작 방을 저장할 변수
     private Node bossRoom; // 보스 방을 저장할 변수
@@ -39,6 +41,7 @@ public class MapGenerator : MonoBehaviour
 
         // 시작 방과 보스 방 설정
         SetStartAndBossRoom();
+        stage = 0;
     }
 
     void Divide(Node tree, int n)
@@ -88,10 +91,13 @@ public class MapGenerator : MonoBehaviour
             FillRoom(rect);
 
             // 적 생성
-            if (tree != startRoom && tree != bossRoom)
+            if (tree != leafNodes[0] && tree != leafNodes[leafNodes.Count - 1])
             {
                 SpawnEnemies(rect);
-            }
+            }else if (tree != leafNodes[0])
+            {
+                SpawnBoss(rect);
+            } 
         }
         else
         {
@@ -169,11 +175,14 @@ public class MapGenerator : MonoBehaviour
             // 시작 방의 중앙에 플레이어를 이동
             Vector2Int playerPosition = startRoom.center;
             player.transform.position = new Vector3(playerPosition.x - mapSize.x / 2, playerPosition.y - mapSize.y / 2, 0);
-
-            // 보스 방의 중앙에 사다리 타일 배치
-            Vector2Int bossRoomCenter = bossRoom.center;
-            ladderMap.SetTile(new Vector3Int(bossRoomCenter.x - mapSize.x / 2, bossRoomCenter.y - mapSize.y / 2, 0), ladderTile);
         }
+    }
+
+    public void InstallLadder()
+    {
+        // 보스 방의 중앙에 사다리 타일 배치
+        Vector2Int bossRoomCenter = bossRoom.center;
+        ladderMap.SetTile(new Vector3Int(bossRoomCenter.x - mapSize.x / 2, bossRoomCenter.y - mapSize.y / 2, 0), ladderTile);
     }
 
     private void FillSpecialRoom(RectInt rect, TileType tileType)
@@ -234,6 +243,17 @@ public class MapGenerator : MonoBehaviour
             // 적을 방의 중앙에 위치시키거나 방의 지정된 위치로 배치
             enemy.transform.position = new Vector3(spawnPosition.x - mapSize.x / 2, spawnPosition.y - mapSize.y / 2, 0);
         }
+    }
+
+    private void SpawnBoss(RectInt roomRect)
+    {
+        GameObject bossPrefab = bossPrefabs[0];
+        Vector2Int spawnPosition = new Vector2Int(
+            Random.Range(roomRect.x + 1, roomRect.x + roomRect.width - 1),
+            Random.Range(roomRect.y + 1, roomRect.y + roomRect.height - 1)
+        );
+        GameObject boss = Instantiate(bossPrefab, new Vector3(spawnPosition.x - mapSize.x / 2, spawnPosition.y - mapSize.y / 2, 0), Quaternion.identity);
+        boss.transform.position = new Vector3(spawnPosition.x - mapSize.x / 2, spawnPosition.y - mapSize.y / 2, 0);
     }
 }
 

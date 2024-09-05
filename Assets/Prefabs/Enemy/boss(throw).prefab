@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 3410305335717839338}
   - component: {fileID: 2807719433630627090}
   - component: {fileID: 6869265578842265911}
-  - component: {fileID: 4102867798251293103}
   - component: {fileID: 3477598961822019914}
   - component: {fileID: 3696864164538508109}
+  - component: {fileID: 8614625643434933874}
   m_Layer: 0
   m_Name: boss(throw)
   m_TagString: Enemy
@@ -162,8 +162,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.9662237, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f4a97e70cab91234baa0a8791b33d9fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -186,7 +186,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 7
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -200,8 +200,59 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &4102867798251293103
-CircleCollider2D:
+--- !u!114 &3477598961822019914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681260567946442806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622d6e84e4b43b419ff30f271adfd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombOb: {fileID: 4251729926973317548, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
+  moveSpeed: 2
+  changeDirectionTime: 5
+  wanderRange: 6
+  rotationSpeed: 360
+  detectionRadius: 6
+  shootDistance: 3
+  fireRate: 1
+  throwPoint: {fileID: 3648515306969397032}
+  raycastDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  hp: 100
+  surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
+  maxSpeed: 10
+  stopTime: 1
+  stopChance: 0.5
+--- !u!95 &3696864164538508109
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681260567946442806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794b1407b6674fd41aaca27595701144, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &8614625643434933874
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -232,56 +283,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &3477598961822019914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4681260567946442806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7622d6e84e4b43b419ff30f271adfd97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombOb: {fileID: 4251729926973317548, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
-  moveSpeed: 2
-  changeDirectionTime: 5
-  wanderRange: 10
-  rotationSpeed: 360
-  detectionRadius: 10
-  shootDistance: 3
-  fireRate: 1
-  throwPoint: {fileID: 3648515306969397032}
-  raycastDistance: 20
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  hp: 100
-  surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
-  stopTime: 1
-  stopChance: 0.5
---- !u!95 &3696864164538508109
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4681260567946442806}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 794b1407b6674fd41aaca27595701144, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Offset: {x: -0.0016125251, y: -0.011398367}
+  m_Size: {x: 0.28725106, y: 0.7036592}
+  m_Direction: 0

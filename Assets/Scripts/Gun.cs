@@ -98,7 +98,7 @@ public class Gun : MonoBehaviour
             Debug.Log(direction);
             Vector2 sp = new Vector2(0,fireSet.y);//(Vector2)transform.GetChild(0).transform.position+direction*distanceFromPlayer+sp
             GameObject newBullet = Instantiate(bullet, transform.position+(Vector3)direction*fireSet.x+(Vector3)(direction.x>0?Rotate90CounterClockwise(direction):Rotate90Clockwise(direction))*fireSet.y, transform.rotation*Quaternion.Euler(0,0,90));
-            newBullet.GetComponent<Rigidbody2D>().AddForce(newBullet.transform.up * -2000);
+            newBullet.GetComponent<Rigidbody2D>().AddForce(newBullet.transform.up * -1000);
             ammo--;
             allowShooting = false;
             Invoke("EnableShooting", shootingCooltime); }

@@ -32,6 +32,9 @@ public class Enemy2 : MonoBehaviour
     private bool isStopped;
 
     private Rigidbody2D rb;
+    private Renderer _renderer;
+    private Color _originalColor;
+    public Color damageColor = Color.red; // 데미지 색상
 
     private void Start()
     {
@@ -42,6 +45,8 @@ public class Enemy2 : MonoBehaviour
         timer = changeDirectionTime;
         stopTimer = stopTime;
         animator = gameObject.GetComponent<Animator>();
+        _renderer = GetComponent<Renderer>();
+        _originalColor = _renderer.material.color;
     }
 
     private void Update()
@@ -166,13 +171,16 @@ public class Enemy2 : MonoBehaviour
     {
         Vector2 target = followingPlayer ? Player.transform.position : targetPosition;
 
-        if (target.x > transform.position.x)
+        // 이동 방향에 따른 시선 처리
+        Vector2 velocity = rb.velocity; // Rigidbody2D의 속도를 이용해 이동 방향을 얻음
+
+        if (velocity.x > 0) // 오른쪽으로 이동 중일 때
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 바라봄
         }
-        else if (target.x < transform.position.x)
+        else if (velocity.x < 0) // 왼쪽으로 이동 중일 때
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 바라봄
         }
     }
 
@@ -207,12 +215,20 @@ public class Enemy2 : MonoBehaviour
         return hit.collider != null && hit.collider.gameObject != Player;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("bullet"))
         {
             hp -= 1;
+            StartCoroutine(FlashDamageColor());
         }
+    }
+
+    private IEnumerator FlashDamageColor()
+    {
+        _renderer.material.color = damageColor;
+        yield return new WaitForSeconds(0.1f);
+        _renderer.material.color = _originalColor;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

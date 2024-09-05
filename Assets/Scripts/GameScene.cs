@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : MonoBehaviour
 {
-    public void ctrol() // ¾À 1¿¡¼­ ¹öÆ° ´©¸¦¶§ À×¿¨¤·
+    public void start()
     {
         SceneManager.LoadScene("Main");
+    }
+    public void GameExit()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
