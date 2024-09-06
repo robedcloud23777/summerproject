@@ -5,12 +5,14 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+// using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
 public class Player : MonoBehaviour
 {
     // Public variables
     public int hp=3;
+    public int sld=3;
     public Image dashPannel;
     public float dashCooltime = 5f;
     public float moveSpeed = 5f;
@@ -41,15 +43,20 @@ public class Player : MonoBehaviour
     public Image heart;
     public Image heart1;
     public Image heart2;
+    public Image shield0;
+    public Image shield1;
+    public Image shield2;
     public Sprite hert;
     public Sprite hert_;
     public GameObject pnl;
     public Sprite[] gunTexture;
     public Text gn;
     public Text bombR;
+    bool ShCool = false;
 
     void Start()
     {
+
         pnl.SetActive(false);
         dashPannel.color = new Color(255, 255, 255, 0f);
         Fpannel = GameObject.Find("F");
@@ -58,7 +65,14 @@ public class Player : MonoBehaviour
         gn.text = weapon.Wn;
 
     }
-
+    void Shield(){
+        sld++;
+        if (sld<3){
+            Invoke("Shield",5f);
+        }else{
+            ShCool=false;
+        }
+    }
     void FixedUpdate()
     {
         Move();
@@ -72,6 +86,7 @@ public class Player : MonoBehaviour
         ThrowBomb();
         bombR.text = "x"+bombremain;
         if (Input.GetKeyDown(KeyCode.Space) && dashable) Dash();
+        if (Input.GetKeyDown(KeyCode.K)) GetDamage();
         
     }
     void Pnl(){
@@ -91,6 +106,23 @@ public class Player : MonoBehaviour
 
     }
     void Heart(){
+        if(sld==0){
+            shield0.gameObject.SetActive(false);
+            shield1.gameObject.SetActive(false);
+            shield2.gameObject.SetActive(false);
+        }else if(sld==1){
+            shield0.gameObject.SetActive(true);
+            shield1.gameObject.SetActive(false);
+            shield2.gameObject.SetActive(false);
+        }else if(sld==2){
+            shield0.gameObject.SetActive(true);
+            shield1.gameObject.SetActive(true);
+            shield2.gameObject.SetActive(false);
+        }else{
+            shield0.gameObject.SetActive(true);
+            shield1.gameObject.SetActive(true);
+            shield2.gameObject.SetActive(true);
+        }
         if(hp>2){
             heart.gameObject.SetActive(true);
             heart1.gameObject.SetActive(true);
@@ -271,12 +303,20 @@ public class Player : MonoBehaviour
         canb=true;
     }
 
-    public void GetDamage(int damage)
+    public void GetDamage()
     {
         if (damaged) return;
         
         damaged = true;
-        hp -= damage;
+        if (sld>0){
+            sld--;
+        }else{
+            hp--;
+        }
+        if(ShCool==false){
+            ShCool=true;
+            Invoke("Shield",5f);
+        }
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0.6f);
         gameObject.layer = 6;
 
