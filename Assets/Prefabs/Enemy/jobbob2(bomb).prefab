@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.436, y: -1.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,10 +139,11 @@ MonoBehaviour:
     m_Bits: 64
   hp: 10
   drop: 0
-  tnfbxks: {fileID: 0}
+  tnfbxks: {fileID: 2890032037001302628, guid: 7ff9a2d496db76f4a8af18f29be46c14, type: 3}
   stopTime: 1
   stopChance: 0.5
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 9090386605241543172, guid: e8f1958fe9631492fae74c18cd842b96, type: 3}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!95 &-7626054244738293886
 Animator:
   serializedVersion: 5

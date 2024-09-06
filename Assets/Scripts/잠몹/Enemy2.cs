@@ -200,7 +200,7 @@ public class Enemy2 : MonoBehaviour
 
         if (player1 != null)
         {
-            player1.hp -= 1;
+            player1.GetDamage();
         }
         Destroy(gameObject);
     }

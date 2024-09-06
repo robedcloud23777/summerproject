@@ -115,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.53, y: -5.38, z: 0}
-  m_LocalScale: {x: 2.105, y: 2.0846, z: 1}
+  m_LocalScale: {x: 3.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3648515306969397032}
@@ -225,11 +225,12 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 100
+  hp: 50
   surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
   maxSpeed: 10
   stopTime: 1
   stopChance: 0.5
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!95 &3696864164538508109
 Animator:
   serializedVersion: 5

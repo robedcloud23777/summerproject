@@ -23,7 +23,7 @@ public class surutan : MonoBehaviour
         {
             if (distance <= range)
             {
-                player1.hp -= 1;
+                player1.GetDamage();
             }
             Destroy(gameObject);
         }

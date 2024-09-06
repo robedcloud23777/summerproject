@@ -115,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.88, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 473784384796174886}
@@ -224,12 +224,13 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 30
+  hp: 10
   drop: 0
-  tnfbxks: {fileID: 0}
+  tnfbxks: {fileID: 7914869279767039400, guid: 104c05f0130fc4c4ea0b593eb5a652d2, type: 3}
   maxSpeed: 2
   stopTime: 1
   stopChance: 0.5
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!95 &5431868223495179451
 Animator:
   serializedVersion: 5

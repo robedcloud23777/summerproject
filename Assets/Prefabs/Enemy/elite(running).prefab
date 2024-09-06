@@ -115,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.25, y: 4.1, z: 0}
-  m_LocalScale: {x: 1.9644729, y: 1.936935, z: 1}
+  m_LocalScale: {x: 2.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 266312602038197484}
@@ -225,13 +225,14 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 30
+  hp: 15
   drop: 0
-  weapon: {fileID: 0}
-  animator: {fileID: 0}
+  weapon: {fileID: 5752271123568428384, guid: 9869217d7555c4b4795909658be1bc60, type: 3}
+  animator: {fileID: -8834098256006820256}
   maxSpeed: 10
   stopTime: 1
   stopChance: 0.5
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!95 &-8834098256006820256
 Animator:
   serializedVersion: 5

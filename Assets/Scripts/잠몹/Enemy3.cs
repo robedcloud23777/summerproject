@@ -243,7 +243,7 @@ public class Enemy3 : MonoBehaviour
         if (angleToEnemy <= attackAngle / 2)
         {
             player1 = GameObject.FindWithTag("Player").GetComponent<Player>();
-            player1.hp -= 1;
+            player1.GetDamage();
 
         }
     }
