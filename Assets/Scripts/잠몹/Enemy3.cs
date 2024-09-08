@@ -1,7 +1,11 @@
+using System.Net.Sockets;
 using UnityEngine;
+
 
 public class Enemy3 : MonoBehaviour
 {
+    public GameObject swordObject; // Sword 스크립트가 붙어 있는 오브젝트를 연결
+    private sword swordScript;
     private GameObject Player;
     private Player player1;
     public float moveSpeed = 2f; // 이동 속도
@@ -20,7 +24,7 @@ public class Enemy3 : MonoBehaviour
     public float attackrange = 1f;
     public float attackAngle = 110f;
     public GameObject tnfbxks;
-
+   
     
     public float stopTime = 1f; // 멈춤 시간
     public float stopChance = 0.5f; // 멈춤 확률 (0.0 ~ 1.0 사이)
@@ -34,6 +38,7 @@ public class Enemy3 : MonoBehaviour
     private Animator animator;
     public float maxSpeed = 10f;
     private Rigidbody2D rb;
+   
 
     private void Start()
     {
@@ -44,6 +49,7 @@ public class Enemy3 : MonoBehaviour
         lastslashTime = -slashRate; // 처음 발사 시간을 초기화하여 첫 발사가 가능하도록 설정
         stopTimer = stopTime; // 멈춤 타이머 초기화
         animator = gameObject.GetComponent<Animator>();
+        swordScript = swordObject.GetComponent<sword>();
     }
     
     void FixedUpdate()
@@ -224,23 +230,27 @@ public class Enemy3 : MonoBehaviour
 
     public void slashAtPlayer()
     {
-        
-        Vector2 directionToEnemy = (Player.transform.transform.position - slashPoint.position).normalized;
+        // 플레이어와 캐릭터의 방향 계산 (플레이어가 캐릭터에서 어디에 있는지)
+        Vector2 directionToPlayer = (Player.transform.position - transform.position).normalized;
 
-        // 공격 방향 (플레이어가 향하고 있는 방향)
-        Vector2 attackDirection = transform.right; // 캐릭터의 오른쪽 방향 (앞 방향)
+        // 캐릭터의 현재 바라보는 방향 (부채꼴 공격 기준이 되는 방향)
+        Vector2 attackDirection = (slashPoint.position - transform.position).normalized;
 
-        // 공격 방향과 적 방향 사이의 각도 계산
-        float angleToEnemy = Vector2.Angle(attackDirection, directionToEnemy);
+        // 공격 방향과 플레이어의 방향 사이의 각도 계산
+        float angleToPlayer = Vector2.Angle(attackDirection, directionToPlayer);
 
-        // 적이 부채꼴 범위 내에 있는지 확인
-        if (angleToEnemy <= attackAngle / 2)
+        // 플레이어가 부채꼴 범위 내에 있는지 확인
+        if (angleToPlayer <= attackAngle / 2)
         {
-            player1 = GameObject.FindWithTag("Player").GetComponent<Player>();
+            // 플레이어가 범위 내에 있으면 데미지 적용
+            Player player1 = GameObject.FindWithTag("Player").GetComponent<Player>();
             player1.hp -= 1;
 
+            // 공격 애니메이션 또는 공격 상태 설정
+            swordScript.swing = true;
         }
     }
+
     private bool IsPlayerObstructed()
     {
         Vector2 directionToPlayer = (Player.transform.position - transform.position).normalized;

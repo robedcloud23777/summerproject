@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2713750324907803663}
   - component: {fileID: 6130124117823207272}
+  - component: {fileID: 1047292587763278773}
+  - component: {fileID: 605241555158754286}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 6776445661737465396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -0.04, z: 0}
-  m_LocalScale: {x: 0.2718, y: 0.4336, z: 1}
+  m_LocalPosition: {x: 0.125, y: 0.071, z: 0}
+  m_LocalScale: {x: 1.0553213, y: 1.298593, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6048378705476119984}
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f69e69d624392745b9273ea4d528ee6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1047292587763278773
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776445661737465396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb1b690c67076f14bbdd7fb29dcf3532, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &605241555158754286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776445661737465396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cf9e47f5adb1440b544ae43e4d8597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Swinging: 0
+  animator: {fileID: 0}
 --- !u!1 &8301362635770066389
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7babbc42317ec4d95b7f9658dadc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordObject: {fileID: 6776445661737465396}
   moveSpeed: 2
   changeDirectionTime: 6
   wanderRange: 6
@@ -224,12 +262,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hp: 100
-  maxSpeed: 10
+  drop: 0
   slashPoint: {fileID: 2713750324907803663}
   attackrange: 1
   attackAngle: 110
+  tnfbxks: {fileID: 0}
   stopTime: 1
   stopChance: 0.5
+  maxSpeed: 10
 --- !u!95 &-8116309460284485599
 Animator:
   serializedVersion: 5

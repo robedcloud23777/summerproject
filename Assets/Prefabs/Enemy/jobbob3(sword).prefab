@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 473784384796174886}
   - component: {fileID: 2039826975533581990}
+  - component: {fileID: 2560591143260368195}
+  - component: {fileID: 6867034947032464020}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 255455816857883479}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -0.04, z: 0}
-  m_LocalScale: {x: 0.2718, y: 0.4336, z: 1}
+  m_LocalPosition: {x: 0.1639, y: 0.1181, z: 0}
+  m_LocalScale: {x: 1.1939851, y: 1.4547623, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5549608164963541760}
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a170187fe0c76947a5fc7824ac6ad95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2560591143260368195
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255455816857883479}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fd7ebea572c7704e9da0e6ae0a40b2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6867034947032464020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255455816857883479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93be20c3508211e48bd9c60aac4a1880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swing: 0
+  animator: {fileID: 0}
 --- !u!1 &8967993637336003265
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,8 +151,8 @@ Transform:
   m_GameObject: {fileID: 8967993637336003265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.88, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10.7013, y: 0.4293, z: 0}
+  m_LocalScale: {x: 2.1169014, y: 2.341435, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 473784384796174886}
@@ -212,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ec6ff0e5f9f2f438f4b7fc9475e9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordObject: {fileID: 255455816857883479}
   moveSpeed: 2
   changeDirectionTime: 7
   wanderRange: 6
