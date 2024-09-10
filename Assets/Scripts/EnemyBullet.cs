@@ -23,5 +23,9 @@ public class EnemyBullet : MonoBehaviour
             player1.GetDamage();
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Map"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

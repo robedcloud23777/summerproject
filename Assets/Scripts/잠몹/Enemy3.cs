@@ -41,7 +41,7 @@ public class Enemy3 : MonoBehaviour
     private Renderer _renderer;
     private Color _originalColor;
     public Color damageColor = Color.red; // 데미지 색상
-
+    private Gun Gun;
 
     private void Start()
     {
@@ -55,6 +55,7 @@ public class Enemy3 : MonoBehaviour
         swordScript = swordObject.GetComponent<sword>();
         _renderer = GetComponent<Renderer>();
         _originalColor = _renderer.material.color;
+        Gun = GameObject.Find("Gun").GetComponent<Gun>();
     }
     
     void FixedUpdate()
@@ -84,7 +85,6 @@ public class Enemy3 : MonoBehaviour
             if (drop >= 5)
             {
                 Instantiate(tnfbxks, transform.position, slashPoint.transform.rotation * Quaternion.Euler(0, 0, 90));
-                tnfbxks.GetComponent<Rigidbody2D>().AddForce(tnfbxks.transform.up * -2, ForceMode2D.Impulse);
             }
             Destroy(gameObject);
         }
@@ -271,7 +271,7 @@ public class Enemy3 : MonoBehaviour
     {
         if (collision.CompareTag("bullet"))
         {
-            hp -= 1;
+            hp -= Gun.damage;
             StartCoroutine(FlashDamageColor());
         }
     }

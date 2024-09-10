@@ -3,15 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\kbl72\\Desktop\\summerproject--\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\mapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\story1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\story1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\surutan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\surutan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uC7A0\uBAB9\\enemy2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\story.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\story.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|c:\\users\\kbl72\\desktop\\summerproject--\\assets\\scripts\\\uC7A0\uBAB9\\enemy2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uC7A0\uBAB9\\enemy2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|c:\\users\\kbl72\\desktop\\summerproject--\\assets\\scripts\\\uC7A0\uBAB9\\enemy1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uC7A0\uBAB9\\enemy1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uC7A0\uBAB9\\enemy1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,67 +35,48 @@
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uC7A0\uBAB9\\enemy3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|c:\\users\\kbl72\\desktop\\summerproject--\\assets\\scripts\\story1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\story1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|c:\\users\\kbl72\\desktop\\summerproject--\\assets\\scripts\\story.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\story.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\mapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mapgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uC5D8\uBAB9\\elitetang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uC5D8\uBAB9\\elitetang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(sword).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(sword).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|c:\\users\\kbl72\\desktop\\summerproject--\\assets\\scripts\\granade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\granade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uC5D8\uBAB9\\eliterunning1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uC5D8\uBAB9\\eliterunning1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(throw).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(throw).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(gun).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(gun).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kbl72\\Downloads\\summerproject--\\summerproject--\\Assets\\Scripts\\MapGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\laddermanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laddermanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(sword).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(sword).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(gun).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(gun).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\\uBCF4\uC2A4\\boss(throw).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\uBCF4\uC2A4\\boss(throw).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\granade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\granade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\laddermanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laddermanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65476D67-D233-B206-6A86-CC44D0B7805E}|Assembly-CSharp.csproj|C:\\Users\\kbl72\\Desktop\\summerproject--\\assets\\scripts\\stageprogressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,62 +90,220 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Story1.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Story1.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Story1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvyEAAAAkAAAA",
+              "DocumentIndex": 12,
+              "Title": "boss(sword).cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAkwD4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T15:00:17.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-05T18:31:22.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "boss(gun).cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAmwAMBAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:20.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "boss(throw).cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAowBUBAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:26:57.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Eliterunning1.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAIwFEAAAB0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:17.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Elitetang.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwFIAAAB0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:16.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Enemy3.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAQwFYAAAB1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:12.9Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Enemy2.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAQwEkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:09.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Enemy1.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAIwEwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:31:07.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Gun.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Gun.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gun.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Gun.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gun.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAA1wBYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T17:16:08.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LadderManger.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\LadderManger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LadderManger.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\LadderManger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LadderManger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T16:08:29.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EnemyBullet.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\EnemyBullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBullet.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\EnemyBullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyBullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T16:05:16.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T16:04:35.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AQIAALMAAAAAAAAAAAAkwHUBAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T15:53:47.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameScene.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\GameScene.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameScene.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\GameScene.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameScene.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T15:13:24.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Story.cs",
               "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Story.cs",
               "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story.cs",
               "RelativeToolTip": "Assets\\Scripts\\Story.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAAvAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T14:59:35.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Granade.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Granade.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Granade.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Granade.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Granade.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAbAAAA",
+              "DocumentIndex": 1,
+              "Title": "Story1.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Story1.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Story1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Story1.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAADwvwIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T13:15:24.397Z",
+              "WhenOpened": "2024-09-10T15:00:17.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 0,
               "Title": "MapGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Downloads\\summerproject--\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "RelativeDocumentMoniker": "..\\..\\Downloads\\summerproject--\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Downloads\\summerproject--\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "RelativeToolTip": "..\\..\\Downloads\\summerproject--\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOoAAAA2AAAA",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MapGenerator.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MapGenerator.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAADwvzEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T15:08:28.921Z"
+              "WhenOpened": "2024-09-04T15:32:25.731Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "surutan.cs",
               "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\surutan.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\surutan.cs",
@@ -161,198 +316,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "boss(sword).cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(sword).cs",
-              "ViewState": "AQIAACwAAAAAAAAAAADwvxkAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:22.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "boss(gun).cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(gun).cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIBAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:20.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "boss(throw).cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uBCF4\uC2A4\\boss(throw).cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAwCEBAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:26:57.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Eliterunning1.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uC5D8\uBAB9\\Eliterunning1.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAIwEwAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:17.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Elitetang.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uC5D8\uBAB9\\Elitetang.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAAwEcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:16.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Enemy3.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy3.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAQwI8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:12.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Enemy2.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy2.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAmwKYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:09.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Enemy1.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\\uC7A0\uBAB9\\Enemy1.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAQwBgBAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:31:07.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Gun.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Gun.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gun.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Gun.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gun.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAUwGMAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T17:16:08.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LadderManger.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\LadderManger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\LadderManger.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\LadderManger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\LadderManger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T16:08:29.193Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "EnemyBullet.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\EnemyBullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBullet.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\EnemyBullet.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyBullet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAArAAAA",
+              "Title": "Granade.cs",
+              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Granade.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Granade.cs",
+              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Granade.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Granade.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T16:05:16.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T16:04:35.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AQIAAIcBAAAAAAAAAAASwKEBAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T15:53:47.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T13:15:24.397Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "GameScene.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\GameScene.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameScene.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\GameScene.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameScene.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T15:13:24.862Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MapGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MapGenerator.cs",
-              "ToolTip": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\MapGenerator.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MapGenerator.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAADwvzAAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T15:32:25.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
               "Title": "StageProgressBar.cs",
               "DocumentMoniker": "C:\\Users\\kbl72\\Desktop\\summerproject--\\Assets\\Scripts\\StageProgressBar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StageProgressBar.cs",

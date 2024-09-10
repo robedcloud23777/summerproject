@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1.5
   radius: 3
-  exdamage: 5
+  exdamage: 10
   explosionEffect: {fileID: 9090386605241543172, guid: e8f1958fe9631492fae74c18cd842b96, type: 3}
 --- !u!58 &-970322788692733319
 CircleCollider2D:

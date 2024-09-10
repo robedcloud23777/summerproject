@@ -127,17 +127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008fd7292396dc94f886623641196bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopRange: 1
-  moveSpeed: 3
+  stopRange: 1.5
+  moveSpeed: 5
   changeDirectionTime: 2.5
   wanderRange: 15
   rotationSpeed: 360
-  detectionRadius: 20
+  detectionRadius: 10
   raycastDistance: 20
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 10
+  hp: 20
   drop: 0
   tnfbxks: {fileID: 2890032037001302628, guid: 7ff9a2d496db76f4a8af18f29be46c14, type: 3}
   stopTime: 1

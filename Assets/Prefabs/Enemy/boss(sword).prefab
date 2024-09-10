@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordObject: {fileID: 6776445661737465396}
-  moveSpeed: 2
+  moveSpeed: 3
   changeDirectionTime: 2.5
   wanderRange: 20
   rotationSpeed: 360
@@ -261,7 +261,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 50
+  hp: 100
   drop: 0
   slashPoint: {fileID: 2713750324907803663}
   attackrange: 1

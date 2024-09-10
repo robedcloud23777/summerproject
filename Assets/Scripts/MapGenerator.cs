@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Accessibility;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class MapGenerator : MonoBehaviour
     private void Update()
     {
         DestroyEnemiesOutsideMap();
+        if (stage == 3)
+        {
+            SceneManager.LoadScene("Story2");
+        }
     }
 
     void Divide(Node tree, int n)

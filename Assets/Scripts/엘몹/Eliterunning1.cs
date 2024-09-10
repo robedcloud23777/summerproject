@@ -34,6 +34,7 @@ public class Eliterunning1 : MonoBehaviour
     private Renderer _renderer;
     private Color _originalColor;
     public Color damageColor = Color.red; // 데미지 색상
+    private Gun Gun;
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class Eliterunning1 : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
         _originalColor = _renderer.material.color;
+        Gun = GameObject.Find("Gun").GetComponent<Gun>();
     }
     
     void FixedUpdate()
@@ -78,7 +80,6 @@ public class Eliterunning1 : MonoBehaviour
             if (drop >= 5)
             {
                 Instantiate(weapon, transform.position, shootPoint.transform.rotation * Quaternion.Euler(0, 0, 90));
-                weapon.GetComponent<Rigidbody2D>().AddForce(weapon.transform.up * -2, ForceMode2D.Impulse);
             }
             Destroy(gameObject);
         }
@@ -259,7 +260,7 @@ public class Eliterunning1 : MonoBehaviour
     {
         if (collision.CompareTag("bullet"))
         {
-            hp -= 1;
+            hp -= Gun.damage;
             StartCoroutine(FlashDamageColor());
         }
     }

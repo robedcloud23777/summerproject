@@ -134,14 +134,14 @@ MonoBehaviour:
   wanderRange: 15
   rotationSpeed: 360
   detectionRadius: 10
-  shootDistance: 5
+  shootDistance: 10
   fireRate: 1
   throwPoint: {fileID: 2581380166918754916}
   raycastDistance: 20
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 50
+  hp: 100
   surutan: {fileID: 5980342997041764076, guid: 3fc88adc6dfa88648bcf6bdc65f56641, type: 3}
   maxSpeed: 10
   stopTime: 1

@@ -216,8 +216,8 @@ MonoBehaviour:
   changeDirectionTime: 2.5
   wanderRange: 15
   rotationSpeed: 360
-  detectionRadius: 10
-  shootDistance: 5
+  detectionRadius: 8
+  shootDistance: 7
   fireRate: 1.5
   bulletPrefab: {fileID: 5553947587113003272, guid: 3d185192300280e4d8f9febcee7b4f5e, type: 3}
   shootPoint: {fileID: 6126130595265054435}
@@ -225,7 +225,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 25
+  hp: 50
   drop: 0
   weapon: {fileID: 9020623564991859406, guid: f2e739bd20d992b4aa3a7022c5b54c2e, type: 3}
   maxSpeed: 10

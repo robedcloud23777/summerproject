@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2.5452332
+  m_AspectRatio: 1.1137005
 --- !u!114 &121667130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.049072266}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364756257
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 386716836}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3481,8 +3481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -677.0027, y: -324.41718}
-  m_SizeDelta: {x: -1616.6674, y: -854.3683}
+  m_AnchoredPosition: {x: -677, y: -309.99}
+  m_SizeDelta: {x: -1571.8, y: -766.6216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147788348
 MonoBehaviour:

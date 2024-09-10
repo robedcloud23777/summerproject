@@ -369,9 +369,9 @@ public class Player : MonoBehaviour
                 string weaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
                 if (weaponName == "Glock")
-                    SetWeapon(8, 8, 1, 0.4f, 1.7f, "Glock", 0, new Vector2(0, 0.1f));
+                    SetWeapon(8, 8, 2, 0.4f, 1.7f, "Glock", 0, new Vector2(0, 0.1f));
                 else if (weaponName == "P1911")
-                    SetWeapon(7, 7, 1, 0.4f, 1.7f, "P1911", 1, new Vector2(0, 0.1f));
+                    SetWeapon(7, 7, 2, 0.4f, 1.7f, "P1911", 1, new Vector2(0, 0.1f));
                 else if (weaponName == "Desert Eagle")
                     SetWeapon(7, 7, 5, 0.6f, 1.8f, "Desert Eagle", 2, new Vector2(0, 0.1f));
                 else if (weaponName == "AK47")

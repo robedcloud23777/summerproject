@@ -36,6 +36,7 @@ public class Bossgun : MonoBehaviour
     public Color damageColor = Color.red; // 데미지 색상
     private GameObject Map;
     private MapGenerator map;
+    private Gun Gun;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class Bossgun : MonoBehaviour
         _originalColor = _renderer.material.color;
         Map = GameObject.Find("Map");
         map = Map.GetComponent<MapGenerator>();
+        Gun = GameObject.Find("Gun").GetComponent<Gun>();
     }
     void FixedUpdate()
     {
@@ -255,7 +257,7 @@ public class Bossgun : MonoBehaviour
     {
         if (collision.CompareTag("bullet"))
         {
-            hp -= 1;
+            hp -= Gun.damage;
             StartCoroutine(FlashDamageColor());
         }
     }

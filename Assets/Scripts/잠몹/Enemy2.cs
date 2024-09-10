@@ -35,6 +35,7 @@ public class Enemy2 : MonoBehaviour
     private Renderer _renderer;
     private Color _originalColor;
     public Color damageColor = Color.red; // 데미지 색상
+    private Gun Gun;
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class Enemy2 : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
         _originalColor = _renderer.material.color;
+        Gun = GameObject.Find("Gun").GetComponent<Gun>();
     }
 
     private void Update()
@@ -70,7 +72,6 @@ public class Enemy2 : MonoBehaviour
         if (hp <= 0)
         {
             HandleDeath();
-            return;
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, Player.transform.position);
@@ -79,7 +80,7 @@ public class Enemy2 : MonoBehaviour
         if (followingPlayer && !IsPlayerObstructed())
         {
             targetPosition = Player.transform.position;
-            moveSpeed = 2f;
+            moveSpeed = 3f;
         }
         else
         {
@@ -134,48 +135,10 @@ public class Enemy2 : MonoBehaviour
             if (tnfbxks != null)
             {
                 GameObject obj = Instantiate(tnfbxks, transform.position, Quaternion.Euler(0, 0, 90));
-                Rigidbody2D objRb = obj.GetComponent<Rigidbody2D>();
-                if (objRb != null)
-                {
-                    objRb.AddForce(obj.transform.up * -2, ForceMode2D.Impulse);
-                }
             }
         }
         Destroy(gameObject);
     }
-
-    //private void HandleRandomMovement()
-    //{
-    //    if (isStopped)
-    //    {
-    //        stopTimer -= Time.deltaTime;
-    //        if (stopTimer <= 0)
-    //        {
-    //            isStopped = false;
-    //            moveSpeed = 2f;
-    //            SetNewRandomPosition();
-    //            timer = changeDirectionTime;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        timer -= Time.deltaTime;
-    //        if (timer <= 0)
-    //        {
-    //            if (Random.value < stopChance)
-    //            {
-    //                isStopped = true;
-    //                stopTimer = stopTime;
-    //                moveSpeed = 0f;
-    //            }
-    //            else
-    //            {
-    //                SetNewRandomPosition();
-    //                timer = changeDirectionTime;
-    //            }
-    //        }
-    //    }
-    //}
 
     private void SetNewRandomPosition()
     {
@@ -250,7 +213,7 @@ public class Enemy2 : MonoBehaviour
     {
         if (collision.CompareTag("bullet"))
         {
-            hp -= 1;
+            hp -= Gun.damage;
             StartCoroutine(FlashDamageColor());
         }
     }

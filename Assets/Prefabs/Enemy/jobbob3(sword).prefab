@@ -254,14 +254,14 @@ MonoBehaviour:
   changeDirectionTime: 2.5
   wanderRange: 20
   rotationSpeed: 360
-  detectionRadius: 15
+  detectionRadius: 10
   shootDistance: 1.5
   slashRate: 2
   raycastDistance: 20
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 10
+  hp: 20
   drop: 0
   slashPoint: {fileID: 473784384796174886}
   attackrange: 1
