@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4155acbcfcfe047648a7bf1080491ff7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1.5
   radius: 3
-  exdamage: 50
+  exdamage: 5
   explosionEffect: {fileID: 9090386605241543172, guid: e8f1958fe9631492fae74c18cd842b96, type: 3}
 --- !u!58 &-970322788692733319
 CircleCollider2D:
@@ -162,6 +162,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0022890072}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.06723737
